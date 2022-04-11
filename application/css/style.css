@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: "Messapia-Regular";
+    src: url("../fonts/Messapia-Regular.woff2") format("woff2"),
+        url("../fonts/Messapia-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Messapia-Bold";
+    src: url("../fonts/Messapia-Bold.woff2") format("woff2"),
+        url("../fonts/Messapia-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "TitlingGothicFB";
+    src: url("../fonts/TitlingGothicFB-Wide.otf") format("opentype");
+}
+
+.TitlingGothicFB {
+    font-family: "TitlingGothicFB" !important;
+}
+
+.messapia-regular {
+    font-family: "Messapia-Regular" !important;
+}
+
+.messapia-bold {
+    font-family: "Messapia-Bold" !important;
+}
+
+.inter-regular {
+    font-family: 'Inter', sans-serif;
+}
+
+.inter-bold {
+    font-family: 'Inter', sans-serif;
+    font-style: bold;
+}
+
+.inter-black {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+}
+
+.nav-item, .dropdown-item {
+    font-size: 0.75rem;
+}
+
+.navbar-toggler {
+    border: 0px solid transparent;
+    padding: 0.1rem 0.1rem;
+    color: lightgray !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.05rem;
+}
+
+.border {
+    border: 1px solid black !important
+}
+
+.border-white {
+    border: 1px solid white !important
+}
+
+.bg-main-img {
+    background-image: url('../assets/images/site_images/main_3D.jpg')
+}
+
+.text-white {
+    color: #f8f8f2;
+}
+
+.model3D  {
+    background-color: rgba(255, 255, 255, 0.2); 
+    /* border-bottom: 1px dashed rgba(0, 0, 0, 1.0);
+    padding-bottom: 2vmax; */
+    height: 30vmax;
+}
+
+X3D, x3d {
+    width: 100%;
+    height: 100%
+}
+
+.dashed {
+    border-bottom: 1px dashed rgba(0, 0, 0, 1.0);
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.dashed-white {
+    border-bottom: 1px dashed rgba(255, 255, 255, 1.0);
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.border-side {
+    border-right: 1px solid rgba(216, 216, 216, 0.25);
+}
+
+

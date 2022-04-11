@@ -15,7 +15,7 @@ class Controller {
 
     function home() {
         $data = $this->model->model3D_info();
-        $this->load->view('view3DAppTest_2', $data);
+        $this->load->view('viewIndex', $data);
     }
 
     function apiCreateTable() {
