@@ -38,9 +38,7 @@ class Controller {
     }
 
     function apiLoadImage() {
-        ChromePhp::warn('controller.php: [apiLoadImage] Get the Brand data');
         $data = $this->model->dbGetBrand();
-        ChromePhp::log($data);
         $this->load->view('viewDrinks', $data);
     }
 }

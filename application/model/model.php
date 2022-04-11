@@ -36,7 +36,6 @@ class Model
 
     function dbInsertData()
     {
-        ChromePhp::log("INSERT INTO Model3D (brand, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelDescription) VALUES ('Coke', 'Coca Cola X3D Model', 'Made within blender and exported to x3d, manually edited material to add texture image', 'History of Coca Cola', 'Atlanta Beginnings', 'It was 1886, and in New York Harbour, workers were constructing the Statue of Liberty. Eight hundred miles away, another great American symbol was about to be unveiled. Like many people who change history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs\' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special. So Jacobs\' Pharmacy put it on sale for five cents (about 3p) a glass.\');");
 
         try {
             $this->dbhandle->exec(
@@ -84,6 +83,7 @@ class Model
             $i = -0;
 
             while ($data = $stmt->fetch()) {
+                $result[$i]['brand'] = $data['brand'];
                 $result[$i]['x3dModelTitle'] = $data['x3dModelTitle'];
                 $result[$i]['x3dCreationMethod'] = $data['x3dCreationMethod'];
                 $result[$i]['modelTitle'] = $data['modelTitle'];
@@ -114,7 +114,7 @@ class Model
 
     public function dbGetBrand()
     {
-        return array("-", "Coke", "Coke Light", "Coke Zero", "Sprite", "Dr Pepper", "Fanta");
+        return array("-", "Coke", "Sprite", "Dr Pepper");
     }
 }
 ?>
