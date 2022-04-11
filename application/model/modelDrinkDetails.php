@@ -1,6 +1,5 @@
 <?php
     include '../debug/ChromePhp.php';
-    ChromePhp::log('Hello');
 
     $brandName = $_GET['brand'];
     try {
@@ -8,9 +7,6 @@
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_EMULATE_PREPARES => false,
         ));
-
-        ChromePhp::log('here');
-        ChromePhp::log(filter_var($brandName));
 
         $sql = 'SELECT * FROM Model_3D WHERE brand = "' . filter_var($brandName) .'";';
         $stmt = $dbhandle->query($sql);
