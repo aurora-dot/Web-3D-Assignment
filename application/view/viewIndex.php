@@ -39,9 +39,13 @@
                                     Drinks
                                 </a>
                                 <ul id="dmenu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="javascript:swap('coke')"">Coca Cola</a></li>
-                                <li><a class=" dropdown-item" href="javascript:swap('sprite')"">Sprite</a></li>
-                                <li><a class=" dropdown-item" href="javascript:swap('drpepper')"">Dr Pepper</a></li>
+
+                                <!-- here -->
+                                <?php
+                                    for ($i=0; $i < count($data); $i++) {
+                                        echo '<li><a class="dropdown-item" href="javascript:swap(\''.$data[$i][0].'\')">'.$data[$i][1].'</a></li>';
+                                    }
+                                ?>
                             </ul>
                         </li>
                         <li class=" nav-item">
@@ -68,63 +72,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row g-5">
-                    <div class="col-lg text-center">
-                        <div class="border border-1 h-100">
-                            <div class="m-3">
-                                <div>
-                                    <img class="img" src="assets/images/site_images/coca_cola.jpg" alt="coca cola" />
-                                </div>
-                                <div class="mt-4">
-                                    <h3 id="title_left" class="text-decoration-underline messapia-regular mb-4"></h3>
-                                    <h6 id="subTitle_left"></h6>
-                                    <p id="description_left"></p>
-                                </div>
-                                <div class="pt-3">
-                                    <a href="javascript:swap('coke')"">
-                                        <button type=" button" class="btn btn-outline-secondary">Find out more</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg text-center">
-                        <div class="border border-1 h-100">
-                            <div class="m-3">
-                                <div>
-                                    <img class="img" src="assets/images/site_images/sprite.jpg" alt="sprite" />
-                                </div>
-                                <div class="mt-4">
-                                    <h3 id="title_centre" class="text-decoration-underline messapia-regular mb-4"></h3>
-                                    <h6 id="subTitle_centre"></h6>
-                                    <p id="description_centre"></p>
-                                </div>
-                                <div class="pt-3">
-                                    <a href="javascript:swap('sprite')"">
-                                        <button type=" button" class="btn btn-outline-secondary">Find out more</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg text-center">
-                        <div class="border border-1 h-100">
-                            <div class="m-3">
-                                <div>
-                                    <img class="img" src="assets/images/site_images/dr_pepper.jpg" alt="dr pepper" />
-                                </div>
-                                <div class="mt-4">
-                                    <h3 id="title_right" class="text-decoration-underline messapia-regular mb-4"></h3>
-                                    <h6 id="subTitle_right"></h6>
-                                    <p id="description_right"></p>
-                                </div>
-                                <div class="pt-3">
-                                    <a href="javascript:swap('drpepper')"">
-                                        <button type=" button" class="btn btn-outline-secondary">Find out more</button>
-                                    </a> </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row g-5" id="frontSections">
+                    
                 </div>
             </div>
 

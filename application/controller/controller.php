@@ -14,7 +14,7 @@ class Controller {
     }
 
     function home() {
-        $data = $this->model->model3D_info();
+        $data = $this->model->dbGetBrands();
         $this->load->view('viewIndex', $data);
     }
 
@@ -38,7 +38,7 @@ class Controller {
     }
 
     function apiLoadImage() {
-        $data = $this->model->dbGetBrand();
+        $data = $this->model->dbGetBrands();
         $this->load->view('viewDrinks', $data);
     }
 }

@@ -12,7 +12,8 @@ function light_theme() {
 
     var all = document.querySelectorAll('#content *');
     for (var i=0, max=all.length; i < max; i++) {
-        all[i].style.color = "";
+        try {all[i].style.color = "";}
+        catch(TypeError) {}
     }
 }
 
@@ -28,7 +29,8 @@ function dark_theme() {
 
     var all = document.querySelectorAll('#content *');
     for (var i=0, max=all.length; i < max; i++) {
-        all[i].style.color = "white";
+        try {all[i].style.color = "white";}
+        catch(TypeError) {}
     }
 }
 

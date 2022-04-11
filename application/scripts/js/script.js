@@ -8,6 +8,7 @@ var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), 
 })
 
 function swap(selected) {
+    selected = selected.toLowerCase().replace(' ', '');
     document.getElementById('index').style.display = 'none';
     document.getElementById('3D').style.display = 'none';
 
