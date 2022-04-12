@@ -20,7 +20,7 @@
     <div class="container" id="content">
         <nav class="navbar navbar-expand-lg navbar-light m-4">
             <div class="container-fluid">
-                <a class="navbar-brand messapia-regular" href="javascript:swap('index')"">cocacola</a>
+                <a class="navbar-brand" href="javascript:swap('index')""><div><div class="messapia-regular">cocacola.</div><div class="strap_under">Great Britain.</div></div></a>
                 <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
