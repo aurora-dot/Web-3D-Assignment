@@ -1,7 +1,5 @@
 <?php
 include 'application/debug/ChromePhp.php';
-ChromePhp::log('controller.php: Hello World');
-ChromePhp::log($_SERVER);
 
 class Controller {
     public $load;

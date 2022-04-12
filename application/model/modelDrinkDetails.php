@@ -30,4 +30,3 @@
 
     $dbhandle = NULL;
     echo json_encode($result);
-?>

@@ -21,38 +21,31 @@
         <nav class="navbar navbar-expand-lg navbar-light m-4">
             <div class="container-fluid">
                 <a class="navbar-brand messapia-regular" href="javascript:swap('index')"">cocacola</a>
-                <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a tabindex="0" class="nav-link" role="button" data-bs-toggle="popover"
-                                    data-bs-trigger="focus" title="About Web 3D Applications"
-                                    data-bs-content="3D Apps is a final year and postgraduate module ...">About</a>
+                                <a tabindex="0" class="nav-link" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="About Web 3D Applications" data-bs-content="3D Apps is a final year and postgraduate module ...">About</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Drinks
                                 </a>
                                 <ul id="dmenu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                <!-- here -->
-                                <?php
-                                    for ($i=0; $i < count($data); $i++) {
-                                        echo '<li><a class="dropdown-item" href="javascript:swap(\''.$data[$i][0].'\')">'.$data[$i][1].'</a></li>';
+                                    <?php
+                                    for ($i = 0; $i < count($data); $i++) {
+                                        echo '<li><a class="dropdown-item" href="javascript:swap(\'' . $data[$i] . '\')">' . $data[$i] . '</a></li>';
                                     }
-                                ?>
-                            </ul>
-                        </li>
-                        <li class=" nav-item">
-                                            <a class="nav-link" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">Contact</a>
-                                    </li>
+                                    ?>
                                 </ul>
+                            </li>
+                            <li class=" nav-item">
+                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+                            </li>
+                        </ul>
                     </div>
             </div>
         </nav>
@@ -73,7 +66,7 @@
                     </div>
                 </div>
                 <div class="row g-5" id="frontSections">
-                    
+
                 </div>
             </div>
 
@@ -82,52 +75,17 @@
                     <div class="col-sm-8">
                         <div class="row">
                             <ul class="nav nav-tabs inter-regular">
-                                <li class="nav-item inter-regular"><a class="nav-link inter-regular"
-                                        href="javascript:swap('coke')"">Coke</a></li>
-                                <li class=" nav-item inter-regular"><a class="nav-link inter-regular"
-                                            href="javascript:swap('sprite')"">Sprite</a></li>
-                                <li class=" nav-item inter-regular"><a class="nav-link inter-regular"
-                                                href="javascript:swap('drpepper')"">Dr. Pepper</a></li>
+                                <?php
+                                for ($i = 0; $i < count($data); $i++) {
+                                    echo '<li class="nav-item inter-regular"><a class="nav-link inter-regular" href="javascript:swap(\'' . $data[$i] . '\')">' . $data[$i] . '</a></li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                         <div class=" row">
-                                                <div class="card-body">
-                                                    <div class="coke">
-                                                        <div class="model3D embed-responsive border border-1">
-                                                            <x3d>
-                                                                <scene>
-                                                                    <inline nameSpaceName="model" mapDEFtoID="true" url="assets/x3d/can.x3d"></inline>
-                                                                </scene>
-                                                            </x3d>
-                                                        </div>
-                                                        <h4 class="pt-5 pb-2" id="x3dModelTitle_coke"></h4>
-                                                        <p id="x3dCreationMethod_coke"></p>
-                                                    </div>
+                            <div class="card-body" id="x3dModel">
 
-                                                    <div class="drpepper">
-                                                        <div class="model3D embed-responsive border border-1">
-                                                            <x3d>
-                                                                <scene>
-                                                                    <inline nameSpaceName="model" mapDEFtoID="true" url="assets/x3d/cup.x3d"></inline>
-                                                                </scene>
-                                                            </x3d>
-                                                        </div>
-                                                        <h4 class="pt-5 pb-2" id="x3dModelTitle_drpepper"></h4>
-                                                        <p id="x3dCreationMethod_drpepper"></p>
-                                                    </div>
-
-                                                    <div class="sprite">
-                                                        <div class="model3D embed-responsive border border-1">
-                                                            <x3d>
-                                                                <scene>
-                                                                    <inline nameSpaceName="model" mapDEFtoID="true" url="assets/x3d/bottle.x3d"></inline>
-                                                                </scene>
-                                                            </x3d>
-                                                        </div>
-                                                        <h4 class="pt-5 pb-2" id="x3dModelTitle_sprite"></h4>
-                                                        <p id="x3dCreationMethod_sprite"></p>
-                                                    </div>
-                                                </div>
+                            </div>
                         </div>
 
                         <div class="row">
@@ -152,12 +110,10 @@
                                 <p id="x3dAnimationSubtitle"></p>
 
                                 <div class=" flex-row">
-                                    <button type="button" class="btn btn-outline-secondary"
-                                        onclick="spin();">RotX</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="spin();">RotX</button>
                                     <button type="button" class="btn btn-outline-secondary">RotY</button>
                                     <button type="button" class="btn btn-outline-secondary">RotZ</button>
-                                    <button type="button" class="btn btn-outline-secondary"
-                                        onclick="stopRotation()">Stop</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="stopRotation()">Stop</button>
                                 </div>
                             </div>
                         </div>
@@ -172,8 +128,7 @@
                                     <button type="button" class="btn btn-outline-success">Poly</button>
                                     <button type="button" class="btn btn-outline-secondary">Wire</button>
                                     <button type="button" class="btn btn-outline-success">Headlight</button>
-                                    <button type="button" class="btn btn-outline-secondary"
-                                        onclick="headlight();">Default</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="headlight();">Default</button>
                                 </div>
                             </div>
 
@@ -187,8 +142,7 @@
                                         On/Off</button>
                                     <button type="button" class="btn btn-outline-secondary">Target
                                         On/Off</button>
-                                    <button type="button" class="btn btn-outline-secondary"
-                                        onclick="headlight();">Headlight
+                                    <button type="button" class="btn btn-outline-secondary" onclick="headlight();">Headlight
                                         On/Off</button>
                                 </div>
                             </div>
@@ -197,22 +151,10 @@
                         </div>
 
                         <div class="row pt-3">
-                            <div class="card-body coke" style="display: none;">
-                                <h3 class="card-title messapia-regular pb-3"><u id="title_coke"></u></h3>
-                                <h6 class="pb-1" id="subTitle_coke"></h6>
-                                <p id="description_coke" class="card-text inter-regular"></p>
-                            </div>
-
-                            <div class="card-body drpepper" style="display: none;">
-                                <h3 class="card-title messapia-regular pb-3"><u id="title_drpepper"></u></h3>
-                                <h6 class="pb-1" id="subTitle_drpepper"></h6>
-                                <p id="description_drpepper" class="card-text inter-regular"></p>
-                            </div>
-
-                            <div class="card-body sprite" style="display: none;">
-                                <h3 class="card-title messapia-regular pb-3"><u id="title_sprite"></u></h3>
-                                <h6 class="pb-1" id="subTitle_sprite"></h6>
-                                <p id="description_sprite" class="card-text inter-regular"></p>
+                            <div class="card-body">
+                                <h3 class="card-title messapia-regular pb-3"><u id="titleCard"></u></h3>
+                                <h6 class="pb-1" id="subTitleCard"></h6>
+                                <p id="descriptionCard" class="card-text inter-regular"></p>
                             </div>
                         </div>
                     </div>
@@ -226,7 +168,7 @@
                         <div class="row">
                             <table id="gallery"></table>
                         </div>
-                        <div class="row">
+                        <div class="row pt-3">
                             <p id="description_gallery" class="inter-bold"></p>
                         </div>
 
@@ -266,6 +208,7 @@
     <script src="application/scripts/js/getJsonData.js"></script>
     <script src="application/scripts/js/jquery.fancybox.min.js"></script>
     <script src="application/scripts/js/modelInteraction.js"></script>
+    <script id="x3d"></script>
 </body>
 
 </html>

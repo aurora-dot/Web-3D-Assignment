@@ -15,4 +15,3 @@
     }
     closedir($dir_handle);
     echo substr_replace($response,"",-1);
-?>

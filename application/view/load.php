@@ -8,4 +8,3 @@ class load {
         include $file_name . '.php';
     }
 }
-?>
