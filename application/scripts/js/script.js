@@ -25,19 +25,19 @@ function swap(selected) {
                     <div class="model3D embed-responsive border border-1">
                         <x3d>
                             <scene>
-                                <inline render="true" nameSpaceName="model" mapDEFtoID="true" url="./application/assets/x3d/${selected.replace(' ', '')}.x3d"></inline>
+                                <inline render="true" nameSpaceName="model" mapDEFtoID="true" url="./application/assets/x3d/${selected.replace(' /g', '')}.x3d"></inline>
                             </scene>
                         </x3d> 
                     </div>
-                    <h4 class="pt-5 pb-2" id="x3dModelTitle">${data[0].x3dModelTitle}</h4>
-                    <p id="x3dCreationMethod">${data[0].x3dCreationMethod}</p>
+                    <h4 class="pt-5 pb-2" id="x3dModelTitle">${data[0].x3dModelTitle.htmlEscape()}</h4>
+                    <p id="x3dCreationMethod">${data[0].x3dCreationMethod.htmlEscape()}</p>
                     </div>
                     `
                 )
 
-                $('#titleCard').html(data[0].modelTitle.toLowerCase());
-                $('#subTitleCard').html(data[0].modelSubtitle);
-                $('#descriptionCard').html(data[0].modelDescription);
+                $('#titleCard').html(data[0].modelTitle.htmlEscape().toLowerCase());
+                $('#subTitleCard').html(data[0].modelSubtitle.htmlEscape());
+                $('#descriptionCard').html(data[0].modelDescription.htmlEscape());
 
                 x3dom.reload()
             }

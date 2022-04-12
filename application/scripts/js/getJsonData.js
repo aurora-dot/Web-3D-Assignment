@@ -45,19 +45,19 @@ function loadFrontpage() {
 
 function loadOther() {
     $.getJSON("application/model/modelOther.php").done(function(data) {
-        $('#title_gallery').html(data[0].title);
-        $('#description_gallery').html(data[0].subTitle);
+        $('#title_gallery').html(data[0].title.htmlEscape());
+        $('#description_gallery').html(data[0].subTitle.htmlEscape());
 
-        $('#x3dCameraTitle').html(data[1].title);
-        $('#x3dCameraSubtitle').html(data[1].subTitle);
+        $('#x3dCameraTitle').html(data[1].title.htmlEscape());
+        $('#x3dCameraSubtitle').html(data[1].subTitle.htmlEscape());
         
-        $('#x3dAnimationTitle').html(data[2].title);
-        $('#x3dAnimationSubtitle').html(data[2].subTitle);
+        $('#x3dAnimationTitle').html(data[2].title.htmlEscape());
+        $('#x3dAnimationSubtitle').html(data[2].subTitle.htmlEscape());
         
-        $('#x3dRenderTitle').html(data[3].title);
-        $('#x3dRenderSubtitle').html(data[3].subTitle);
+        $('#x3dRenderTitle').html(data[3].title.htmlEscape());
+        $('#x3dRenderSubtitle').html(data[3].subTitle.htmlEscape());
         
-        $('#x3dLightTitle').html(data[4].title);
-        $('#x3dLightSubtitle').html(data[4].subTitle);
+        $('#x3dLightTitle').html(data[4].title.htmlEscape());
+        $('#x3dLightSubtitle').html(data[4].subTitle.htmlEscape());
     });
 }
