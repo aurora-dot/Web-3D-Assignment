@@ -31,7 +31,7 @@ function swap(selected) {
                     `
                     <div>
                     <div class="model3D embed-responsive border border-1">
-                        <x3d>
+                        <x3d id="theModel">
                             <scene>
                                 <inline render="true" nameSpaceName="model" mapDEFtoID="true" url="./application/assets/x3d/${selected.replace(' ', '')}.x3d"></inline>
                             </scene>

@@ -110,10 +110,10 @@
                                 <p id="x3dAnimationSubtitle"></p>
 
                                 <div class=" flex-row">
-                                    <button type="button" class="btn btn-outline-secondary" onclick="spin();">RotX</button>
-                                    <button type="button" class="btn btn-outline-secondary">RotY</button>
-                                    <button type="button" class="btn btn-outline-secondary">RotZ</button>
-                                    <button type="button" class="btn btn-outline-secondary" onclick="stopRotation()">Stop</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="spinX();">RotX</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="spinY();">RotY</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="spinZ();">RotZ</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="stopRotation();">Stop</button>
                                 </div>
                             </div>
                         </div>
@@ -126,9 +126,7 @@
 
                                 <div class=" flex-row">
                                     <button type="button" class="btn btn-outline-success">Poly</button>
-                                    <button type="button" class="btn btn-outline-secondary">Wire</button>
-                                    <button type="button" class="btn btn-outline-success">Headlight</button>
-                                    <button type="button" class="btn btn-outline-secondary" onclick="headlight();">Default</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="wireFrame();">Wire</button>
                                 </div>
                             </div>
 
@@ -179,7 +177,7 @@
     </div>
 
     <footer class="mt-auto" id="footer">
-        <div class="text-center mt-4 mb-4"> Coca Cola | 2022 | <a href="javascript:swap_theme()">Switch Theme</a></div>
+        <div class="text-center mt-4 mb-4"> Coca Cola | 2022 | <a href="javascript:swap_theme()">Switch Theme</a> | <a href="https://github.com/aurora-dot/Web-3D-Assignment">GitHub</a></div>
     </footer>
 
     <!-- Modal -->

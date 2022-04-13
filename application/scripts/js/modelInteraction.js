@@ -2,21 +2,31 @@
 
 var spinning = false;
 
-function spin() {
-    spinning = !spinning;
-    document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
+function spinY() {
+    stopRotation();
+    spinning = true;
+    document.getElementById('model__YRotationTimer').setAttribute('enabled', spinning.toString());
+}
+
+function spinX() {
+    stopRotation();
+    spinning = true;
+    document.getElementById('model__XRotationTimer').setAttribute('enabled', spinning.toString());
+}
+
+function spinZ() {
+    stopRotation();
+    spinning = true;
+    document.getElementById('model__ZRotationTimer').setAttribute('enabled', spinning.toString());
 }
 
 function stopRotation() {
-    spinning = false;
-    document.getElementById('model__RotationTimer').setAttribute('enabled', spinning.toString());
-}
-
-function animateModel() {
-    if (document.getElementById('model__RotationTimer').getAttribute('enabled') != 'true')
-        document.getElementById('model__RotationTimer').setAttribute('enabled', 'true');
-    else
-        document.getElementById('model__RotationTimer').setAttribute('enabled', 'false');
+    if (spinning) {
+        spinning = false;
+        document.getElementById('model__XRotationTimer').setAttribute('enabled', spinning.toString());
+        document.getElementById('model__YRotationTimer').setAttribute('enabled', spinning.toString());
+        document.getElementById('model__ZRotationTimer').setAttribute('enabled', spinning.toString());
+    }
 }
 
 var lightOn = true;
@@ -48,4 +58,9 @@ function cameraTop() {
 
 function cameraBottom() {
     document.getElementById('model__CA_bottom').setAttribute('bind', 'true');
+}
+
+function wireFrame() {
+	var e = document.getElementById('theModel');
+	e.runtime.togglePoints(true);
 }
