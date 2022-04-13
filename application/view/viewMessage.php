@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <!-- load data response -->
     <h1><?php echo $data ?></h1>
 </body>
 

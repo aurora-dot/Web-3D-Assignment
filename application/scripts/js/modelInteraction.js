@@ -1,25 +1,29 @@
-//adapted from example code 'benskitchen.com' (kept reference from lab work)
+// Adapted from example code 'benskitchen.com' (kept reference from lab work)
 
 var spinning = false;
 
+// Spins on Y axis
 function spinY() {
     stopRotation();
     spinning = true;
     document.getElementById('model__YRotationTimer').setAttribute('enabled', spinning.toString());
 }
 
+// Spins on X axis
 function spinX() {
     stopRotation();
     spinning = true;
     document.getElementById('model__XRotationTimer').setAttribute('enabled', spinning.toString());
 }
 
+// Spins on Z axis
 function spinZ() {
     stopRotation();
     spinning = true;
     document.getElementById('model__ZRotationTimer').setAttribute('enabled', spinning.toString());
 }
 
+// Stop rotation
 function stopRotation() {
     if (spinning) {
         spinning = false;
@@ -29,27 +33,35 @@ function stopRotation() {
     }
 }
 
+// Set light vars
 var headlightOn = false;
 var omniOn = true;
 var targetOn = false;
 
+// Resets light
 function resetLight() {
+
+    // Sets all to true to be reset to false in function runs
     headlightOn = true;
     omniOn = true;
     targetOn = true;
     
+    // Runs all functions to set false
     target();
     headlight();
     omni();
     
+    // Sets omni to true
     omni()
 }
 
+// Turn on or off headlight
 function headlight() {
     headlightOn = !headlightOn;
     document.getElementById('model__headlight').setAttribute('headlight', headlightOn.toString());
 }
 
+// Turn on or off omni
 function omni() {
     omniOn = !omniOn;
     if(omni == false) {
@@ -64,6 +76,7 @@ function omni() {
     }
 }
 
+// Turn on or off target
 function target() {
     if (omniOn == false) {
         omniOn = true;
@@ -73,6 +86,10 @@ function target() {
         document.getElementById('model__LA_Light').setAttribute('intensity', 1 * targetOn);
     }
 }
+
+//
+// Change camera view
+//
 
 function cameraFront() {
     document.getElementById('model__CA_front').setAttribute('bind', 'true');
@@ -105,6 +122,7 @@ function wireFrame() {
 
 // Inspired from: https://stackoverflow.com/a/17711190
 
+// Changes texture of model through loading the file as a base64 string
 function readFile() {
     if (this.files && this.files[0]) {
         var file = new FileReader();
@@ -115,4 +133,5 @@ function readFile() {
     }
 }
 
+// Calls readFile when a new file is added to the file input
 document.getElementById("textureInput").addEventListener("change", readFile);

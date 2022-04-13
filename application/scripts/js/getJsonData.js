@@ -1,19 +1,23 @@
+// Loads the frontpage data and the controls data
 $(document).ready(function () {
 	loadFrontpage();
     loadOther();
 });
 
 function loadFrontpage() {
+    // Sends a request to the Frontpage endpoint
     $.getJSON("application/model/modelFrontPage.php").done(function(data) {
         let frontCode = []
 
         $.each(data, function(i, item) {
             if (i == 0) {
+                // If it's the title, add to the title section
                 $('#title_home').html(item.title);
                 $('#subTitle_home').html(item.subTitle);
                 $('#description_home').html(item.descriptionInfo);
 
             } else {
+                // Add brand information sections to array
                 frontCode.push(
                     `
                     <div class="col-lg text-center">
@@ -39,11 +43,13 @@ function loadFrontpage() {
             }
 		});
         
+        // Join the array together as one string with newlines separating them
         $('#frontSections').html(frontCode.join('\n'));
     });
 }
 
 function loadOther() {
+    // Send request to the other model and load in descriptions into sections
     $.getJSON("application/model/modelOther.php").done(function(data) {
         $('#title_gallery').html(escape(data[0].title));
         $('#description_gallery').html(escape(data[0].subTitle));

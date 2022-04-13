@@ -8,6 +8,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- import stylesheets -->
     <link rel='stylesheet' type='text/css' href='application/css/x3dom.css'>
     <link rel="stylesheet" href="application/css/bootstrap.css" />
     <link rel="stylesheet" href="application/css/style.css" />
@@ -18,12 +19,15 @@
 
 <body class="d-flex flex-column min-vh-100" id="body">
     <div class="container" id="content">
+        <!-- nav bar and logo -->
         <nav class="navbar navbar-expand-lg navbar-light m-4">
             <div class="container-fluid">
+                <!-- logo -->
                 <a class="navbar-brand" href="javascript:swap('index')""><div><div class="messapia-regular">cocacola.</div><div class="strap_under"><center>Great Britain.</center></div></div></a>
                 <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
+                    <!-- nav links -->
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
@@ -34,7 +38,7 @@
                                     Drinks
                                 </a>
                                 <ul id="dmenu" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
+                                    <!-- model brands -->
                                     <?php
                                     for ($i = 0; $i < count($data); $i++) {
                                         echo '<li><a class="dropdown-item" href="javascript:swap(\'' . $data[$i] . '\')">' . $data[$i] . '</a></li>';
@@ -51,7 +55,10 @@
         </nav>
 
         <main class="container">
+            <!-- home page view -->
             <div id="index">
+
+                <!-- header image and text -->
                 <div class="row">
                     <div class="col-lg">
                         <div class="bg-main-img text-center">
@@ -65,11 +72,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row g-5" id="frontSections">
 
-                </div>
+                <!-- brand info to be added here through ajax json request -->
+                <div class="row g-5" id="frontSections"></div>
             </div>
 
+            <!-- x3d model view  -->
             <div id="3D" style="display: none;">
                 <div class="row">
                     <div class="col-sm-8">
@@ -83,6 +91,8 @@
                             </ul>
                         </div>
                         <div class=" row">
+
+                            <!-- x3d canvas to be added via js here -->
                             <div class="card-body" id="x3dModel">
 
                             </div>
@@ -90,6 +100,7 @@
 
                         <div class="row">
                             <div class="col-lg pt-4">
+                                <!-- camera control info -->
                                 <h6 id="x3dCameraTitle"></h6>
                                 <p id="x3dCameraSubtitle"></p>
 
@@ -101,11 +112,11 @@
                                     <button type="button" class="btn btn-outline-secondary" onclick="cameraRight()">Right</button>
                                     <button type="button" class="btn btn-outline-secondary" onclick="cameraTop()">Top</button>
                                     <button type="button" class="btn btn-outline-secondary" onclick="cameraBottom()">Bottom</button>
-                                    <button type="button" class="btn btn-outline-dark disabled">Off</button>
                                 </div>
                             </div>
 
                             <div class="col-lg pt-4">
+                                <!-- animation control info -->
                                 <h6 id="x3dAnimationTitle"></h6>
                                 <p id="x3dAnimationSubtitle"></p>
 
@@ -121,6 +132,7 @@
                         <div class="row">
 
                             <div class="col-lg pt-4">
+                                <!-- render control info  -->
                                 <h6 id="x3dRenderTitle"></h6>
                                 <p id="x3dRenderSubtitle"></p>
 
@@ -135,6 +147,7 @@
                             </div>
 
                             <div class="col-lg pt-4">
+                                <!-- lighting control info -->
                                 <h6 id="x3dLightTitle"></h6>
                                 <p id="x3dLightSubtitle"></p>
 
@@ -153,6 +166,7 @@
                         </div>
 
                         <div class="row pt-3">
+                            <!-- brand information -->
                             <div class="card-body">
                                 <h3 class="card-title messapia-regular pb-3"><u id="titleCard"></u></h3>
                                 <h6 class="pb-1" id="subTitleCard"></h6>
@@ -184,7 +198,7 @@
         <div class="text-center mt-4 mb-4"> Coca Cola | 2022 | <a href="javascript:swap_theme()">Switch Theme</a> | <a href="https://github.com/aurora-dot/Web-3D-Assignment">GitHub</a></div>
     </footer>
 
-    <!-- Modal -->
+    <!-- modal for contact details and references -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -210,6 +224,7 @@
         </div>
     </div>
 
+    <!-- javascript imports -->
     <script src="application/scripts/js/bootstrap.bundle.min.js"></script>
     <script type='text/javascript' src='application/scripts/js/x3dom.js'></script>
     <script src="application/scripts/js/script.js"></script>
