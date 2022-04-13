@@ -79,7 +79,7 @@
 							          shininess="0.500"
 							          transparency="0.0"
 							          />
-							<ImageTexture url='"maps/coke.jpg"'/>
+							<ImageTexture DEF="IMG_Texture" url='"maps/coke.jpg"'/>
 						</Appearance>
 						<IndexedFaceSet solid="false"
 						                creaseAngle="4.0000"

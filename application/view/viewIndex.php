@@ -126,6 +126,11 @@
 
                                 <div class=" flex-row">
                                     <button type="button" class="btn btn-outline-secondary" onclick="wireFrame();">Wire Toggles</button>
+
+                                    <div class="mt-3">
+                                        <label for="textureInput" class="form-label">Change Texture:</label>
+                                        <input type="file" class="form-control" id="textureInput">
+                                    </div>
                                 </div>
                             </div>
 
@@ -134,7 +139,7 @@
                                 <p id="x3dLightSubtitle"></p>
 
                                 <div class=" flex-row">
-                                    <button type="button" class="btn btn-outline-success">Default</button>
+                                    <button type="button" class="btn btn-outline-success" onclick="resetLight();">Default</button>
                                     <button type="button" class="btn btn-outline-secondary" onclick="omni();">Omni
                                         On/Off</button>
                                     <button type="button" class="btn btn-outline-secondary" onclick="target();">Target
@@ -194,6 +199,7 @@
                     <p>https://stackoverflow.com/questions/70175144/how-can-you-rotate-a-wireframe-cube-in-x3dom</p>
                     <p>https://github.com/ccampbell/chromephp/blob/master/ChromePhp.php</p>
                     <p>https://benskitchen.com</p>
+                    <p>https://stackoverflow.com/a/17711190</p>
                     <h6>GitHub:</h6>
                     <p>https://github.com/aurora-dot/Web-3D-Assignment</p>
                 </div>

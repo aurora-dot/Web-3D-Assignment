@@ -33,6 +33,18 @@ var headlightOn = false;
 var omniOn = true;
 var targetOn = false;
 
+function resetLight() {
+    headlightOn = true;
+    omniOn = true;
+    targetOn = true;
+    
+    target();
+    headlight();
+    omni();
+    
+    omni()
+}
+
 function headlight() {
     headlightOn = !headlightOn;
     document.getElementById('model__headlight').setAttribute('headlight', headlightOn.toString());
@@ -40,10 +52,15 @@ function headlight() {
 
 function omni() {
     omniOn = !omniOn;
+    if(omni == false) {
+        target = false;
+    }
     possibleLights = ["LA_Light", "LA_Light_001", "LA_Light_002", "LA_Light_003"]
 
-    for (light=0; light<possibleLights.length; light++) {
-        document.getElementById('model__' + possibleLights[light]).setAttribute('intensity', 1 * omniOn);
+    for (light = 0; light < possibleLights.length; light++) {
+        try {
+            document.getElementById('model__' + possibleLights[light]).setAttribute('intensity', 1 * omniOn);
+        } catch (TypeError) {}
     }
 }
 
@@ -82,6 +99,20 @@ function cameraBottom() {
 }
 
 function wireFrame() {
-	var e = document.getElementById('theModel');
-	e.runtime.togglePoints(true);
+    var e = document.getElementById('theModel');
+    e.runtime.togglePoints(true);
 }
+
+// Inspired from: https://stackoverflow.com/a/17711190
+
+function readFile() {
+    if (this.files && this.files[0]) {
+        var file = new FileReader();
+        file.addEventListener("load", function (e) {
+            document.getElementById('model__IMG_Texture').setAttribute('url', e.target.result)
+        });
+        file.readAsDataURL(this.files[0]);
+    }
+}
+
+document.getElementById("textureInput").addEventListener("change", readFile);

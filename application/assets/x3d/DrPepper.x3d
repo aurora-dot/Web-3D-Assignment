@@ -80,7 +80,7 @@
 							          shininess="0.500"
 							          transparency="0.0"
 							          />
-							<ImageTexture url='"maps/drpepper.png"'/>
+							<ImageTexture DEF="IMG_Texture" url='"maps/drpepper.png"'/>
 						</Appearance>
 						<IndexedFaceSet solid="false"
 						                creaseAngle="4.0000"
