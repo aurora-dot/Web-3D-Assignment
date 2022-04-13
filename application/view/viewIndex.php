@@ -43,7 +43,7 @@
                                 </ul>
                             </li>
                             <li class=" nav-item">
-                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact & Details</a>
                             </li>
                         </ul>
                     </div>
@@ -125,8 +125,7 @@
                                 <p id="x3dRenderSubtitle"></p>
 
                                 <div class=" flex-row">
-                                    <button type="button" class="btn btn-outline-success">Poly</button>
-                                    <button type="button" class="btn btn-outline-secondary" onclick="wireFrame();">Wire</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="wireFrame();">Wire Toggles</button>
                                 </div>
                             </div>
 
@@ -136,9 +135,9 @@
 
                                 <div class=" flex-row">
                                     <button type="button" class="btn btn-outline-success">Default</button>
-                                    <button type="button" class="btn btn-outline-secondary">Omni
+                                    <button type="button" class="btn btn-outline-secondary" onclick="omni();">Omni
                                         On/Off</button>
-                                    <button type="button" class="btn btn-outline-secondary">Target
+                                    <button type="button" class="btn btn-outline-secondary" onclick="target();">Target
                                         On/Off</button>
                                     <button type="button" class="btn btn-outline-secondary" onclick="headlight();">Headlight
                                         On/Off</button>
@@ -185,11 +184,18 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Contact</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Contact & Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Email: ep396@sussex.ac.uk</p>
+                    <h6>Email:</h6>
+                    <p>ep396@sussex.ac.uk</p>
+                    <h6>References:</h6>
+                    <p>https://stackoverflow.com/questions/70175144/how-can-you-rotate-a-wireframe-cube-in-x3dom</p>
+                    <p>https://github.com/ccampbell/chromephp/blob/master/ChromePhp.php</p>
+                    <p>https://benskitchen.com</p>
+                    <h6>GitHub:</h6>
+                    <p>https://github.com/aurora-dot/Web-3D-Assignment</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>

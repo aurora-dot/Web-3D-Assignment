@@ -1,4 +1,4 @@
-//adapted from example code 'benskitchen.com'
+//adapted from example code 'benskitchen.com' (kept reference from lab work)
 
 var spinning = false;
 
@@ -29,11 +29,32 @@ function stopRotation() {
     }
 }
 
-var lightOn = true;
+var headlightOn = false;
+var omniOn = true;
+var targetOn = false;
 
 function headlight() {
-    lightOn = !lightOn;
-    document.getElementById('model__headlight').setAttribute('headlight', lightOn.toString());
+    headlightOn = !headlightOn;
+    document.getElementById('model__headlight').setAttribute('headlight', headlightOn.toString());
+}
+
+function omni() {
+    omniOn = !omniOn;
+    possibleLights = ["LA_Light", "LA_Light_001", "LA_Light_002", "LA_Light_003"]
+
+    for (light=0; light<possibleLights.length; light++) {
+        document.getElementById('model__' + possibleLights[light]).setAttribute('intensity', 1 * omniOn);
+    }
+}
+
+function target() {
+    if (omniOn == false) {
+        omniOn = true;
+        omni();
+
+        targetOn = !targetOn;
+        document.getElementById('model__LA_Light').setAttribute('intensity', 1 * targetOn);
+    }
 }
 
 function cameraFront() {
